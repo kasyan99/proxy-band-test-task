@@ -16,7 +16,7 @@ const Page: React.FC<Props> = ({ list, isFetching, isError, title }) => {
    return (
       <Container style={{ position: 'relative' }}>
          <Card className="px-3 py-2 mb-3">
-            <Card.Title>
+            <Card.Title className="text-center">
                {title}
             </Card.Title>
          </Card>

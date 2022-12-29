@@ -1,17 +1,23 @@
 import { Route, Routes } from 'react-router-dom';
-import PostsPage from './pages/PostsPage';
-import UsersPage from './pages/UsersPage';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Nav from './components/Nav';
+import React, { Suspense } from 'react';
+import { Container, Spinner } from 'react-bootstrap';
+const HomePage = React.lazy(() => import('./pages/HomePage'))
+const UsersPage = React.lazy(() => import('./pages/UsersPage'))
+const PostsPage = React.lazy(() => import('./pages/PostsPage'))
 
 function App() {
   return (
     <div className="py-3">
-      <Routes>
-        <Route path='users/' element={<UsersPage />}>
-          <Route path='albums/:userId' />
-        </Route>
-        <Route path='posts/:userId' element={<PostsPage />} />
-      </Routes>
+      <Nav />
+      <Suspense fallback={<Container><Spinner animation="border" variant="primary" /></Container>}>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='users/' element={<UsersPage />} />
+          <Route path='posts/:userId' element={<PostsPage />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 }

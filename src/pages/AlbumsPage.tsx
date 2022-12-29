@@ -42,14 +42,12 @@ import { ListGroup } from "react-bootstrap"
 import AlbumCard from "../components/AlbumCard"
 import { useGetPostsQuery } from "../services/usersApi"
 import Page from "../components/Page"
-import { useParams } from "react-router-dom"
 
 type Props = {
-
+   userId: number
 }
 
-const AlbumsPage: React.FC<Props> = () => {
-   const { userId } = useParams()
+const AlbumsPage: React.FC<Props> = ({ userId }) => {
    const { data: albums, isFetching, isError } = useGetPostsQuery(Number(userId))
 
    return (
