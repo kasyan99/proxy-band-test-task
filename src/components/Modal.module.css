@@ -1,0 +1,36 @@
+.modal{
+   position: fixed;
+   top: 10vh;
+   left: 50%;
+   transform: translate(-50%,0);
+   z-index: 1001;
+}
+   
+.overlay {
+   position: fixed;
+   top:0;
+   left:0;
+   right:0;
+   bottom:0;
+   background-color: rgba(0,0,0,.7);
+   z-index: 1000;
+}
+
+div.card{
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+   overflow-y: auto;
+   height: 80vh;
+}
+
+
+div.card::-webkit-scrollbar {
+   width: 12px;               /* scrollbar width*/
+ }
+ 
+ 
+ div.card::-webkit-scrollbar-thumb {
+   background-color: rgba(0,0,0,.7);/* scrollbar color*/
+   border-radius: 20px;
+   border: 2px solid rgba(255, 255, 255, 1);  /* отступ вокруг бегунка */
+ }

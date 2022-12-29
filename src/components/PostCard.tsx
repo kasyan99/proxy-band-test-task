@@ -1,6 +1,5 @@
-import { Button, Card } from "react-bootstrap"
-import { Link } from "react-router-dom"
-import { Post, User } from "../models/models"
+import { Card } from "react-bootstrap"
+import { Post } from "../models/models"
 
 type Props = {
    post: Post

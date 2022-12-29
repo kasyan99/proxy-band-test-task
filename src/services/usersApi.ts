@@ -1,6 +1,6 @@
 // Need to use the React-specific entry point to import createApi
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import { Post, User } from "../models/models"
+import { Album, Post, User } from "../models/models"
 
 // Define a service using a base URL and expected endpoints
 export const usersApi = createApi({
@@ -15,9 +15,13 @@ export const usersApi = createApi({
     getPosts: builder.query<Post[], number>({
       query: (userId: number) => `posts?userId=${userId}`,
     }),
+    getAlbums: builder.query<Album[], number>({
+      query: (userId: number) => `albums?userId=${userId}`,
+    }),
   }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetUsersQuery, useGetPostsQuery } = usersApi
+export const { useGetUsersQuery, useGetPostsQuery, useGetAlbumsQuery } =
+  usersApi
