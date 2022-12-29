@@ -9,7 +9,7 @@ type Props = {
 const UserCard: React.FC<Props> = ({ user }) => {
    return <Card.Body>
       <Card.Title>{user.name}</Card.Title>
-      <Link className="btn btn-primary me-2" to={'/posts'}>Posts</Link>
+      <Link className="btn btn-primary me-2" to={`/posts/${user.id}`}>Posts</Link>
       <Button variant="primary">Albums</Button>
    </Card.Body>
 

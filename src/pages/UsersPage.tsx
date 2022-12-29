@@ -27,7 +27,7 @@ const UsersPage: React.FC<Props> = () => {
          {isFetching && <Spinner animation="border" variant="primary" />}
          {!isFetching &&
             <ListGroup >
-               {users?.map(user => <ListGroup.Item>
+               {users?.map(user => <ListGroup.Item key={user.id}>
                   <UserCard user={user} />
                </ListGroup.Item>)}
             </ListGroup>
